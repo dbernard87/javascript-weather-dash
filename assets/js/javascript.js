@@ -14,9 +14,9 @@ function getApi() {
             listItem.classList.add("previousBtn");
             listItem.textContent = inputSearch.value;
             document.querySelector('#name').textContent = data['name'];
-            document.querySelector('#temp').textContent = data['main']['temp'];
-            document.querySelector('#wind').textContent = data['wind']['speed'];
-            document.querySelector('#humidity').textContent = data['main']['humidity'];
+            document.querySelector('#temp').textContent = "Temperature: " + data['main']['temp'];
+            document.querySelector('#wind').textContent = "Wind Speed: " + data['wind']['speed'];
+            document.querySelector('#humidity').textContent = "Humidity: " + data['main']['humidity'];
             repoList.appendChild(listItem);
             return fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + data['coord']['lat'] + "&lon=" + data['coord']['lon'] + "&appid=0a4b3b2dc3abb0dca1990864d02586cd");
         })  
@@ -24,9 +24,7 @@ function getApi() {
         return response.json();
         })
         .then(function (data) {
-            let currentUv = document.querySelector('#uv');
-            
-            currentUv.textContent = data['current']['uvi'];
+            document.querySelector('#uv').textContent = "UV Index: " + data['current']['uvi'];
 
             document.querySelector('#weekDayOne').textContent = moment.unix(data['daily'][1]['dt']).format("dddd");
             document.querySelector('#dayOne').textContent = moment.unix(data['daily'][1]['dt']).format("MMMM Do YYYY");
