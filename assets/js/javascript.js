@@ -1,5 +1,5 @@
 let inputSearch = document.querySelector('.locationSearch');
-let repoList = document.querySelector('ul');
+let repoList = document.querySelector('.previousSearch');
 let fetchButton = document.querySelector('.searchButton');
 
 function getApi() {
