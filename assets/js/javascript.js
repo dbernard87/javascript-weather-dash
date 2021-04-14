@@ -25,6 +25,7 @@ function getApi() {
         })
         .then(function (data) {
             document.querySelector('#uv').textContent = "UV Index: " + data['current']['uvi'];
+            document.querySelector('#icon').setAttribute('src', "http://openweathermap.org/img/w/" + data['daily'][0]['weather'][0]['icon'] + ".png");
 
             document.querySelector('#weekDayOne').textContent = moment.unix(data['daily'][1]['dt']).format("dddd");
             document.querySelector('#dayOne').textContent = moment.unix(data['daily'][1]['dt']).format("MMMM Do YYYY");
