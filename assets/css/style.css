@@ -8,10 +8,20 @@ body {
     width: 100%;
 }
 
+.logoDiv {
+    text-align: center;
+    margin-top: -45px;
+}
+
+.fas {
+    color: #007bff;
+    margin-right: 2px;
+}
+
 header {
     display: flex;
     padding-top: 25px;
-    margin-bottom: -25px;
+    margin-bottom: -50px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -39,10 +49,10 @@ button {
     padding-bottom: 3px;
 }
 
-h4 {
+h3 {
     text-align: center;
     color: white;
-    margin-top: 50px;
+    margin-top: 80px;
     margin-bottom: 20px;
 }
 
@@ -55,6 +65,7 @@ h4 {
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 25px;
     width: 90%;
     color: white;
     justify-content: center;
@@ -81,6 +92,17 @@ h4 {
     min-height: 50px;
 }
 
+.clearDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.clearButton {
+    height: 50px;
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.3));
+    background-color: #dc3545;
+}
+
 .currentForecast {
     display: flex;
     flex-direction: column;
@@ -98,7 +120,7 @@ h4 {
     text-align: center;
     font-size: 1.3em;
     padding: 10px;
-    filter: drop-shadow(1px 20px 15px rgba(22, 22, 22, 0.3));
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.3));
 }
 
 #icon {

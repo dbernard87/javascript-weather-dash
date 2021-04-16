@@ -1,6 +1,7 @@
 let inputSearch = document.querySelector('.locationSearch');
 let previousSearch = document.querySelector('.previousSearch');
 let searchButton = document.querySelector('.searchButton');
+let clearButton = document.querySelector('.clearButton');
 
 let pastSearches = localStorage.getItem('location');
 
@@ -100,5 +101,10 @@ function getApi() {
             document.querySelector('#humidityFive').textContent = "Humidity: " + data.daily[5].humidity + "%";
         })  
 }   
+
+clearButton.addEventListener('click', function() {
+    localStorage.removeItem('location');
+    previousSearch.textContent = "";
+})
 
 searchButton.addEventListener('click', getApi);
