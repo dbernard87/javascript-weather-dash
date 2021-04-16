@@ -9,6 +9,8 @@ The UV Index has a background color that will change depending on the current UV
 
 The application was created using HTML, CSS, and Javascript. The application uses the Open Weather API, Font Awesome icons, Google Fonts, and Moment JS to display the current date.
 
+The application layout is designed to be mobile friendly.
+
 
 ## Usage
 
