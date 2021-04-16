@@ -1,6 +1,29 @@
 let inputSearch = document.querySelector('.locationSearch');
-let repoList = document.querySelector('.previousSearch');
+let previousSearch = document.querySelector('.previousSearch');
 let searchButton = document.querySelector('.searchButton');
+
+let pastSearches = localStorage.getItem('location');
+
+if (pastSearches == null) {
+    pastSearches = [];      
+} else {
+    pastSearches = JSON.parse(pastSearches);
+}
+
+function addPastSearch(city) {
+    let listItem = document.createElement('button');
+    listItem.addEventListener('click', function() {
+        inputSearch.value = city;
+        getApi();
+    })
+    listItem.classList.add("previousBtn");
+    listItem.textContent = city;
+    previousSearch.appendChild(listItem);
+}
+
+for (let pastSearch of pastSearches) {
+    addPastSearch(pastSearch);
+}
 
 function getApi() {
     let requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + inputSearch.value + "&units=imperial&appid=0a4b3b2dc3abb0dca1990864d02586cd";
@@ -9,12 +32,11 @@ function getApi() {
         return response.json();
         })
         .then(function (data) {
-            let listItem = document.createElement('button');
-
-            listItem.classList.add("previousBtn");
-            listItem.textContent = inputSearch.value;
-            repoList.appendChild(listItem);
-
+            if (!pastSearches.includes(inputSearch.value)) {
+                addPastSearch(inputSearch.value);
+                pastSearches.push(inputSearch.value)
+                localStorage.setItem('location', JSON.stringify(pastSearches));
+            }
             document.querySelector('#name').textContent = data.name;
             document.querySelector('#temp').textContent = "Temperature: " + data.main.temp + "°F";
             document.querySelector('#wind').textContent = "Wind Speed: " + data.wind.speed + " MPH";
@@ -26,6 +48,7 @@ function getApi() {
         })
         .then(function (data) {
             console.log(data);
+            
             document.querySelector('#currentDay').textContent = moment.unix(data.daily[0].dt).format("dddd");
             document.querySelector('#currentDate').textContent = moment.unix(data.daily[0].dt).format("MMMM Do YYYY");
             document.querySelector('#icon').setAttribute('src', "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");

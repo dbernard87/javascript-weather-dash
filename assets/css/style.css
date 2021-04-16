@@ -25,6 +25,7 @@ input {
     margin-right: 10px;
     border-style: none;
     font-size: 1.3em;
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.3));
 }
 
 button {
@@ -60,6 +61,11 @@ h4 {
     font-size: 1.3em;
     align-items: center;
     flex-wrap: wrap;
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.3));
+}
+
+.searchButton {
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.3));
 }
 
 .previousSearch p {
@@ -92,6 +98,7 @@ h4 {
     text-align: center;
     font-size: 1.3em;
     padding: 10px;
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.3));
 }
 
 #icon {
@@ -113,6 +120,7 @@ h4 {
 
 .fiveDayForecast {
     display: flex;
+    flex-wrap: wrap;
     margin-right: auto;
     margin-left: auto;
     width: 92%;
@@ -132,4 +140,5 @@ h4 {
     font-size: 1.3em;
     justify-content: center;
     padding: 10px;
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.3));
 }
