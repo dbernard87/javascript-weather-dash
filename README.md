@@ -26,7 +26,7 @@ Enter the desired location in the search bar, and press submit, or hit enter. Th
 - Open Weather API
 - Current Forecast
 - Five Day Forecast
-- UV Index with color changing background.
+- UV Index with color changing background
 - Moment JS
 
 
