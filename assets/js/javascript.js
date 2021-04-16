@@ -2,7 +2,6 @@ let inputSearch = document.querySelector('.locationSearch');
 let previousSearch = document.querySelector('.previousSearch');
 let searchButton = document.querySelector('.searchButton');
 let clearButton = document.querySelector('.clearButton');
-
 let pastSearches = localStorage.getItem('location');
 
 if (pastSearches == null) {
@@ -15,6 +14,8 @@ function addPastSearch(city) {
     let listItem = document.createElement('button');
     listItem.addEventListener('click', function() {
         inputSearch.value = city;
+        document.querySelector('#currentSpan').textContent = inputSearch.value;
+        document.querySelector('#fiveDaySpan').textContent = inputSearch.value;
         getApi();
     })
     listItem.classList.add("previousBtn");
@@ -38,6 +39,8 @@ function getApi() {
                 pastSearches.push(inputSearch.value)
                 localStorage.setItem('location', JSON.stringify(pastSearches));
             }
+            document.querySelector('#currentSpan').textContent = inputSearch.value;
+            document.querySelector('#fiveDaySpan').textContent = inputSearch.value;
             document.querySelector('#name').textContent = data.name;
             document.querySelector('#temp').textContent = "Temperature: " + data.main.temp + "°F";
             document.querySelector('#wind').textContent = "Wind Speed: " + data.wind.speed + " MPH";
@@ -48,11 +51,9 @@ function getApi() {
         return response.json();
         })
         .then(function (data) {
-            console.log(data);
-            
             document.querySelector('#currentDay').textContent = moment.unix(data.daily[0].dt).format("dddd");
             document.querySelector('#currentDate').textContent = moment.unix(data.daily[0].dt).format("MMMM Do YYYY");
-            document.querySelector('#icon').setAttribute('src', "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
+            document.querySelector('#icon').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + "@2x.png");
             document.querySelector('#uv').textContent = "UV Index: " + data.current.uvi;
 
             if (data.current.uvi < 3) {
@@ -67,44 +68,52 @@ function getApi() {
 
             document.querySelector('#weekDayOne').textContent = moment.unix(data.daily[1].dt).format("dddd");
             document.querySelector('#dayOne').textContent = moment.unix(data.daily[1].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconOne').setAttribute('src', "http://openweathermap.org/img/w/" + data.daily[1].weather[0].icon + ".png");
+            document.querySelector('#iconOne').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + "@2x.png");
             document.querySelector('#tempOne').textContent = "Temperature: " + data.daily[1].temp.day + " °F";
             document.querySelector('#windOne').textContent = "Wind Speed: " + data.daily[1].wind_speed + " MPH";
             document.querySelector('#humidityOne').textContent = "Humidity: " + data.daily[1].humidity + "%";
 
             document.querySelector('#weekDayTwo').textContent = moment.unix(data.daily[2].dt).format("dddd");
             document.querySelector('#dayTwo').textContent = moment.unix(data.daily[2].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconTwo').setAttribute('src', "http://openweathermap.org/img/w/" + data.daily[2].weather[0].icon + ".png");
+            document.querySelector('#iconTwo').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + "@2x.png");
             document.querySelector('#tempTwo').textContent = "Temperature: " + data.daily[2].temp.day + " °F";
             document.querySelector('#windTwo').textContent = "Wind Speed: " + data.daily[2].wind_speed + " MPH";
             document.querySelector('#humidityTwo').textContent = "Humidity: " + data.daily[2].humidity + "%";
 
             document.querySelector('#weekDayThree').textContent = moment.unix(data.daily[3].dt).format("dddd");
             document.querySelector('#dayThree').textContent = moment.unix(data.daily[3].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconThree').setAttribute('src', "http://openweathermap.org/img/w/" + data.daily[3].weather[0].icon + ".png");
+            document.querySelector('#iconThree').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + "@2x.png");
             document.querySelector('#tempThree').textContent = "Temperature: " + data.daily[3].temp.day + " °F";
             document.querySelector('#windThree').textContent = "Wind Speed: " + data.daily[3].wind_speed + " MPH";
             document.querySelector('#humidityThree').textContent = "Humidity: " + data.daily[3].humidity + "%";
 
             document.querySelector('#weekDayFour').textContent = moment.unix(data.daily[4].dt).format("dddd");
             document.querySelector('#dayFour').textContent = moment.unix(data.daily[4].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconFour').setAttribute('src', "http://openweathermap.org/img/w/" + data.daily[4].weather[0].icon + ".png");
+            document.querySelector('#iconFour').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + "@2x.png");
             document.querySelector('#tempFour').textContent = "Temperature: " + data.daily[4].temp.day + " °F";
             document.querySelector('#windFour').textContent = "Wind Speed: " + data.daily[4].wind_speed + " MPH";
             document.querySelector('#humidityFour').textContent = "Humidity: " + data.daily[4].humidity + "%";
 
             document.querySelector('#weekDayFive').textContent = moment.unix(data.daily[5].dt).format("dddd");
             document.querySelector('#dayFive').textContent = moment.unix(data.daily[5].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconFive').setAttribute('src', "http://openweathermap.org/img/w/" + data.daily[5].weather[0].icon + ".png");
+            document.querySelector('#iconFive').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[5].weather[0].icon + "@2x.png");
             document.querySelector('#tempFive').textContent = "Temperature: " + data.daily[5].temp.day + " °F";
             document.querySelector('#windFive').textContent = "Wind Speed: " + data.daily[5].wind_speed + " MPH";
             document.querySelector('#humidityFive').textContent = "Humidity: " + data.daily[5].humidity + "%";
         })  
 }   
-
+    
 clearButton.addEventListener('click', function() {
     localStorage.removeItem('location');
     previousSearch.textContent = "";
 })
+
+document.querySelector('#mainInput').addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+        document.querySelector('#currentSpan').textContent = inputSearch.value;
+        document.querySelector('#fiveDaySpan').textContent = inputSearch.value;   
+        getApi();
+    }
+});
 
 searchButton.addEventListener('click', getApi);

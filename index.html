@@ -14,13 +14,12 @@
       <h3><i class="fas fa-cloud"></i>WeatherDash</h3>
     </div>
     <header>
-        <input type="search" class="locationSearch" placeholder="Search by state, city, or zipcode...">
-        <button type="submit" class="searchButton">Search</button>
+        <input type="search" class="locationSearch" id="mainInput" placeholder="Search by state, city, or zipcode...">
+        <button type="submit" class="searchButton" type="button">Search</button>
     </header>
-    <h3>Previous Searches</h3>
     <div class="previousSearch"></div>
     <div class="clearDiv"><button type="submit" class="clearButton">Clear Searches</button></div>
-    <h3>Current Forecast For</h3>
+    <h3>Current Forecast For <span id="currentSpan"></span></h3>
     <div class="currentForecast">
         <div id="name"></div>
         <div id="currentDay"></div>
@@ -31,7 +30,7 @@
         <div id="humidity"></div>
         <div id="uv"></div>
     </div>
-    <h3>Five Day Forecast For</h3>
+    <h3>Five Day Forecast For <span id="fiveDaySpan"></span></h3>
     <div class="fiveDayForecast">
         <div class="fiveDay" id="dayOneDiv">
             <div id="weekDayOne"></div>

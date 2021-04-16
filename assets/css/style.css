@@ -6,6 +6,12 @@
 body {
     background-color: rgb(44, 44, 44);
     width: 100%;
+    background-image: url(https://images.pexels.com/photos/1905054/pexels-photo-1905054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-color: rgba(44, 44, 44, 0.4);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .logoDiv {
@@ -22,7 +28,6 @@ body {
 header {
     display: flex;
     padding-top: 25px;
-    margin-bottom: -50px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -62,10 +67,11 @@ h3 {
     width: 1660px;
     height: auto;
     min-height: 70px;
-    background-color: rgb(63, 63, 63);
+    background-color: rgba(36, 36, 36, 0.8);
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
     margin-bottom: 25px;
     width: 90%;
     color: white;
@@ -110,7 +116,7 @@ h3 {
     width: 1660px;
     height: auto;
     min-height: 400px;
-    background-color: rgb(63, 63, 63);
+    background-color: rgba(36, 36, 36, 0.8);
     margin-right: auto;
     margin-left: auto;
     margin-top: 10px;
@@ -131,7 +137,7 @@ h3 {
 }
 
 .iconClouds {
-    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.5));
+    filter: drop-shadow(1px 15px 5px rgba(22, 22, 22, 0.7));
 }
 
 #uv {
@@ -150,17 +156,20 @@ h3 {
     flex-wrap: wrap;
     margin-right: auto;
     margin-left: auto;
-    width: 92%;
+    width: 91%;
     margin-top: -17px;
 }
 
 .fiveDay {
     display: flex;
     flex-direction: column;
-    background-color: rgb(63, 63, 63);
+    background-color: rgba(36, 36, 36, 0.8);
     flex: 1;
     min-height: 400px;
-    margin: 20px;
+    min-width: 250px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 20px;
     border-radius: 5px;
     color: white;
     text-align: center;
