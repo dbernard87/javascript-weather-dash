@@ -59,7 +59,7 @@ function getApi() {
             /*-------------------- UV Index Dynamic Styling --------------------*/
             document.querySelector('#currentDay').textContent = moment.unix(data.daily[0].dt).format("dddd");
             document.querySelector('#currentDate').textContent = moment.unix(data.daily[0].dt).format("MMMM Do YYYY");
-            document.querySelector('#icon').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + "@2x.png");
+            document.querySelector('#icon').setAttribute('src', "https://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + "@2x.png");
             document.querySelector('#uv').textContent = "UV Index: " + data.current.uvi;
             /*-------------------- If Statement To Set UV Index Background Color --------------------*/
             if (data.current.uvi < 3) {
@@ -74,35 +74,35 @@ function getApi() {
             /*-------------------- Day One Div Dynamic Styling --------------------*/
             document.querySelector('#weekDayOne').textContent = moment.unix(data.daily[1].dt).format("dddd");
             document.querySelector('#dayOne').textContent = moment.unix(data.daily[1].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconOne').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + "@2x.png");
+            document.querySelector('#iconOne').setAttribute('src', "https://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + "@2x.png");
             document.querySelector('#tempOne').textContent = "Temperature: " + data.daily[1].temp.day + " °F";
             document.querySelector('#windOne').textContent = "Wind Speed: " + data.daily[1].wind_speed + " MPH";
             document.querySelector('#humidityOne').textContent = "Humidity: " + data.daily[1].humidity + "%";
             /*-------------------- Day Two Div Dynamic Styling --------------------*/
             document.querySelector('#weekDayTwo').textContent = moment.unix(data.daily[2].dt).format("dddd");
             document.querySelector('#dayTwo').textContent = moment.unix(data.daily[2].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconTwo').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + "@2x.png");
+            document.querySelector('#iconTwo').setAttribute('src', "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + "@2x.png");
             document.querySelector('#tempTwo').textContent = "Temperature: " + data.daily[2].temp.day + " °F";
             document.querySelector('#windTwo').textContent = "Wind Speed: " + data.daily[2].wind_speed + " MPH";
             document.querySelector('#humidityTwo').textContent = "Humidity: " + data.daily[2].humidity + "%";
             /*-------------------- Day Three Div Dynamic Styling --------------------*/
             document.querySelector('#weekDayThree').textContent = moment.unix(data.daily[3].dt).format("dddd");
             document.querySelector('#dayThree').textContent = moment.unix(data.daily[3].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconThree').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + "@2x.png");
+            document.querySelector('#iconThree').setAttribute('src', "https://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + "@2x.png");
             document.querySelector('#tempThree').textContent = "Temperature: " + data.daily[3].temp.day + " °F";
             document.querySelector('#windThree').textContent = "Wind Speed: " + data.daily[3].wind_speed + " MPH";
             document.querySelector('#humidityThree').textContent = "Humidity: " + data.daily[3].humidity + "%";
             /*-------------------- Day Four Div Dynamic Styling --------------------*/
             document.querySelector('#weekDayFour').textContent = moment.unix(data.daily[4].dt).format("dddd");
             document.querySelector('#dayFour').textContent = moment.unix(data.daily[4].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconFour').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + "@2x.png");
+            document.querySelector('#iconFour').setAttribute('src', "https://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + "@2x.png");
             document.querySelector('#tempFour').textContent = "Temperature: " + data.daily[4].temp.day + " °F";
             document.querySelector('#windFour').textContent = "Wind Speed: " + data.daily[4].wind_speed + " MPH";
             document.querySelector('#humidityFour').textContent = "Humidity: " + data.daily[4].humidity + "%";
             /*-------------------- Day Five Div Dynamic Styling --------------------*/
             document.querySelector('#weekDayFive').textContent = moment.unix(data.daily[5].dt).format("dddd");
             document.querySelector('#dayFive').textContent = moment.unix(data.daily[5].dt).format("MMMM Do YYYY");
-            document.querySelector('#iconFive').setAttribute('src', "http://openweathermap.org/img/wn/" + data.daily[5].weather[0].icon + "@2x.png");
+            document.querySelector('#iconFive').setAttribute('src', "https://openweathermap.org/img/wn/" + data.daily[5].weather[0].icon + "@2x.png");
             document.querySelector('#tempFive').textContent = "Temperature: " + data.daily[5].temp.day + " °F";
             document.querySelector('#windFive').textContent = "Wind Speed: " + data.daily[5].wind_speed + " MPH";
             document.querySelector('#humidityFive').textContent = "Humidity: " + data.daily[5].humidity + "%";
