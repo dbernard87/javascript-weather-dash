@@ -38,3 +38,4 @@ Enter the desired location in the search bar, and press submit, or hit enter. Th
 - w3schools : [https://www.w3schools.com/]
 - MDN Documentation : [https://developer.mozilla.org/en-US/]
 - Open Weather API [https://openweathermap.org/api]
+- Photo by Brett Sayles from Pexels [https://www.pexels.com/photo/fluffy-clouds-floating-in-blue-sky-6548285/]
