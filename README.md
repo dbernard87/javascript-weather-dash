@@ -32,7 +32,6 @@ Enter the desired location in the search bar, and press submit, or hit enter. Th
 
 ## Credits
 
-- David Bernard : [https://github.com/dbernard87]
 - Icons from Font Awesome : [https://fontawesome.com/]
 - Stack Overflow : [https://stackoverflow.com/]
 - w3schools : [https://www.w3schools.com/]
